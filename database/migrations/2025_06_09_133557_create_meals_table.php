@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('meals', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->nullable();
             $table->string('name');
             $table->text('description')->nullable();
             $table->decimal('price', 8, 2);
-            $table->unsignedBigInteger('category_id')->nullable();
             $table->timestamps(); 
         });
     }
